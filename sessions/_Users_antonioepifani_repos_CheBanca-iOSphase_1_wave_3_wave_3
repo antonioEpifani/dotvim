@@ -8,10 +8,18 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +58 Common/DesignSystem/UI/Views/DateView.swift
-badd +1 Feature/Operations/UI/WireTransfersHistory/Views/WireTransferHistoryFilterPageView.swift
+badd +1 Common/DesignSystem/UI/Views/DateView.swift
+badd +52 Feature/Operations/UI/WireTransfersHistory/Views/WireTransferHistoryFilterPageView.swift
+badd +3 Common/DesignSystem/UI/FilterChips/FilterChipTableViewCell.swift
+badd +158 Feature/Operations/UI/HistoryPageView.swift
+badd +1 Feature/Operations/UI
+badd +1 Feature/Operations/UI/WireTransfersHistory/WireTransfersHistoryViewController.swift
 argglobal
 %argdel
+set stal=2
+tabnew
+tabnew
+tabrewind
 edit Common/DesignSystem/UI/Views/DateView.swift
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
@@ -66,17 +74,129 @@ setlocal fdn=20
 setlocal fen
 6
 normal! zo
-let s:l = 44 - ((30 * winheight(0) + 30) / 61)
+let s:l = 52 - ((38 * winheight(0) + 30) / 61)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 44
-normal! 021|
+keepjumps 52
+normal! 05|
+lcd ~/repos/CheBanca-iOS
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 238)
 exe 'vert 2resize ' . ((&columns * 118 + 119) / 238)
-tabnext 1
+tabnext
+edit ~/repos/CheBanca-iOS/Common/DesignSystem/UI/FilterChips/FilterChipTableViewCell.swift
+argglobal
+balt ~/repos/CheBanca-iOS/Feature/Operations/UI/WireTransfersHistory/Views/WireTransferHistoryFilterPageView.swift
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 3 - ((2 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 3
+normal! 039|
+lcd ~/repos/CheBanca-iOS
+tabnext
+edit ~/repos/CheBanca-iOS/Feature/Operations/UI/WireTransfersHistory/WireTransfersHistoryViewController.swift
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 30 + 31) / 63)
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 238)
+exe '2resize ' . ((&lines * 29 + 31) / 63)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 238)
+exe 'vert 3resize ' . ((&columns * 118 + 119) / 238)
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 396 - ((21 * winheight(0) + 15) / 30)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 396
+normal! 034|
+lcd ~/repos/CheBanca-iOS
+wincmd w
+argglobal
+if bufexists("~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift") | buffer ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift | else | edit ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift | endif
+if &buftype ==# 'terminal'
+  silent file ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift
+endif
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 161 - ((14 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 161
+normal! 018|
+lcd ~/repos/CheBanca-iOS
+wincmd w
+argglobal
+if bufexists("~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift") | buffer ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift | else | edit ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift | endif
+if &buftype ==# 'terminal'
+  silent file ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift
+endif
+balt ~/repos/CheBanca-iOS/Common/DesignSystem/UI/FilterChips/FilterChipTableViewCell.swift
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 186 - ((0 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 186
+normal! 016|
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 30 + 31) / 63)
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 238)
+exe '2resize ' . ((&lines * 29 + 31) / 63)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 238)
+exe 'vert 3resize ' . ((&columns * 118 + 119) / 238)
+tabnext 3
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

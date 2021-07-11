@@ -15,7 +15,7 @@ badd +24 Feature/CBill/UI/CBillPagoPa/CBillCompanySearch/CBillCompanySearchPageV
 badd +42 Feature/CBill/UI/CBillPagoPa/CBillTabView/CBillTabPageView.swift
 badd +202 Feature/Operations/UI/MenuPage/MenuViewController.swift
 badd +44 Feature/CBill/UI/CBillPagoPa/CBillPaymentSearch/CBillPaymentSearchPageView.swift
-badd +34 Feature/CBill/UI/CBillPagoPa/CBillPaymentSearch/CBillPaymentSearchViewController.swift
+badd +35 Feature/CBill/UI/CBillPagoPa/CBillPaymentSearch/CBillPaymentSearchViewController.swift
 badd +153 Feature/BankAccounts/UI/FilterViewController/FilterPageView.swift
 badd +23 ~/.vimrc
 badd +6 Common/DesignSystem/UI/Form/Cells/FormDoubleDateTableViewCell.swift
@@ -39,14 +39,24 @@ badd +6 Common/DesignSystem/UI/Form/Cells/FormDateTableViewCell.swift
 badd +36 Feature/Operations/UI/WireTransfersHistory/Views/WireTransferHistoryFilterPageView.swift
 badd +322 Feature/Operations/UI/ShowInformationPageView.swift
 badd +1 Feature/Operations/UI/WireTransfersHistory/Views/ButtonWithRightImage.swift
-badd +1 Feature/CBill/UI/CBillPagoPa/CBillSearchResults/Cells/InfoDescriptionWithSymbolTableViewCell.swift
-badd +0 Common/DesignSystem/UI/Views/SymbolAndLabelView.swift
+badd +119 Feature/CBill/UI/CBillPagoPa/CBillSearchResults/Cells/InfoDescriptionWithSymbolTableViewCell.swift
+badd +4 Common/DesignSystem/UI/Views/SymbolAndLabelView.swift
 badd +1 Feature/CBill/UI/CBillPagoPa/CBillPaymentSearch
-badd +73 Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsViewController.swift
-badd +0 Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsPageView.swift
+badd +96 Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsViewController.swift
+badd +1 Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsPageView.swift
+badd +100 Feature/Operations/UI/WireTransfersHistory/WireTransfersHistoryPageView.swift
+badd +1 2021-07-09\ 10
+badd +33 Feature/CBill/Logic/CBillRicercaRetrieve/CBillRicercaRetrieveDataModel.swift
+badd +1 2021-07-09\ 11
+badd +3 Common/DesignSystem/UI/FilterChips/FilterChipTableViewCell.swift
+badd +50 Feature/Operations/UI/HistoryPageView.swift
 argglobal
 %argdel
 set stal=2
+tabnew
+tabnew
+tabnew
+tabnew
 tabnew
 tabnew
 tabnew
@@ -68,10 +78,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 1resize ' . ((&columns * 111 + 119) / 238)
-exe '2resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 2resize ' . ((&columns * 110 + 119) / 238)
+exe '1resize ' . ((&lines * 57 + 30) / 61)
+exe 'vert 1resize ' . ((&columns * 182 + 111) / 222)
+exe '2resize ' . ((&lines * 57 + 30) / 61)
+exe 'vert 2resize ' . ((&columns * 55 + 111) / 222)
 argglobal
 balt Feature/Operations/UI/MenuPage/MenuViewController.swift
 setlocal fdm=indent
@@ -82,99 +92,27 @@ setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-26
+30
 normal! zo
-32
-normal! zo
-35
+76
 normal! zo
 79
 normal! zo
-92
-normal! zo
-94
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-101
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-106
-normal! zo
-122
-normal! zo
 133
 normal! zo
-135
+146
 normal! zo
-136
-normal! zo
-143
-normal! zo
-154
+148
 normal! zo
 156
 normal! zo
-157
+156
 normal! zo
-let s:l = 27 - ((7 * winheight(0) + 28) / 57)
+let s:l = 28 - ((7 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 27
+keepjumps 28
 normal! 036|
 lcd ~/repos/CheBanca-iOS
 wincmd w
@@ -194,57 +132,23 @@ setlocal fdn=20
 setlocal fen
 11
 normal! zo
-94
+93
 normal! zo
-106
+120
 normal! zo
-116
-normal! zo
-126
-normal! zo
-129
-normal! zo
-138
-normal! zo
-141
-normal! zo
-150
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
-normal! zo
-151
+132
 normal! zo
 let s:l = 43 - ((25 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 43
-normal! 016|
+normal! 01|
 wincmd w
-exe '1resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 1resize ' . ((&columns * 111 + 119) / 238)
-exe '2resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 2resize ' . ((&columns * 110 + 119) / 238)
+exe '1resize ' . ((&lines * 57 + 30) / 61)
+exe 'vert 1resize ' . ((&columns * 182 + 111) / 222)
+exe '2resize ' . ((&lines * 57 + 30) / 61)
+exe 'vert 2resize ' . ((&columns * 55 + 111) / 222)
 tabnext
 edit ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsPageView.swift
 let s:save_splitbelow = &splitbelow
@@ -263,10 +167,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 1resize ' . ((&columns * 111 + 119) / 238)
-exe '2resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 2resize ' . ((&columns * 110 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 119 + 111) / 222)
+exe 'vert 2resize ' . ((&columns * 118 + 111) / 222)
 argglobal
 balt ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsViewController.swift
 setlocal fdm=indent
@@ -277,13 +179,11 @@ setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-74
+73
 normal! zo
-86
+85
 normal! zo
-91
-normal! zo
-let s:l = 101 - ((36 * winheight(0) + 28) / 57)
+let s:l = 101 - ((37 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -305,40 +205,52 @@ setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-10
+11
 normal! zo
-18
+23
 normal! zo
-19
+24
 normal! zo
-33
+42
 normal! zo
-81
+105
 normal! zo
-103
+127
 normal! zo
-117
+135
 normal! zo
-153
-normal! zo
-156
-normal! zo
-let s:l = 73 - ((8 * winheight(0) + 28) / 57)
+let s:l = 73 - ((0 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 73
-normal! 020|
+normal! 01|
 lcd ~/repos/CheBanca-iOS
 wincmd w
-exe '1resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 1resize ' . ((&columns * 111 + 119) / 238)
-exe '2resize ' . ((&lines * 57 + 31) / 63)
-exe 'vert 2resize ' . ((&columns * 110 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 119 + 111) / 222)
+exe 'vert 2resize ' . ((&columns * 118 + 111) / 222)
 tabnext
-edit ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/Cells/InfoDescriptionWithSymbolTableViewCell.swift
+edit ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsPageView.swift
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 49 + 30) / 61)
+exe '2resize ' . ((&lines * 10 + 30) / 61)
 argglobal
-balt ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillPaymentSearch/CBillPaymentSearchViewController.swift
+balt ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/Cells/InfoDescriptionWithSymbolTableViewCell.swift
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -347,18 +259,194 @@ setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-6
+73
 normal! zo
-49
+85
 normal! zo
-55
-normal! zo
-let s:l = 52 - ((8 * winheight(0) + 30) / 60)
+let s:l = 101 - ((24 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 52
-normal! 0110|
+keepjumps 101
+normal! 043|
+lcd ~/repos/CheBanca-iOS
+wincmd w
+argglobal
+enew
+balt ~/repos/CheBanca-iOS/Common/DesignSystem/UI/Views/SymbolAndLabelView.swift
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+lcd ~/repos/CheBanca-iOS
+wincmd w
+exe '1resize ' . ((&lines * 49 + 30) / 61)
+exe '2resize ' . ((&lines * 10 + 30) / 61)
+tabnext
+edit ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillPaymentSearch/CBillPaymentSearchViewController.swift
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 118 + 111) / 222)
+exe 'vert 2resize ' . ((&columns * 119 + 111) / 222)
+argglobal
+balt ~/repos/CheBanca-iOS/2021-07-09\ 11
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 35 - ((34 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 35
+normal! 010|
+lcd ~/repos/CheBanca-iOS
+wincmd w
+argglobal
+if bufexists("~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsViewController.swift") | buffer ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsViewController.swift | else | edit ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsViewController.swift | endif
+if &buftype ==# 'terminal'
+  silent file ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/CBillSearchResultsViewController.swift
+endif
+balt ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/Cells/InfoDescriptionWithSymbolTableViewCell.swift
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=4
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+11
+normal! zo
+23
+normal! zo
+24
+normal! zo
+42
+normal! zo
+105
+normal! zo
+127
+normal! zo
+135
+normal! zo
+160
+normal! zo
+168
+normal! zo
+170
+normal! zo
+let s:l = 95 - ((31 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 95
+normal! 010|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 118 + 111) / 222)
+exe 'vert 2resize ' . ((&columns * 119 + 111) / 222)
+tabnext
+edit ~/repos/CheBanca-iOS/Common/DesignSystem/UI/FilterChips/FilterChipTableViewCell.swift
+argglobal
+balt ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillPaymentSearch/CBillPaymentSearchViewController.swift
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 3 - ((2 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 3
+normal! 025|
+lcd ~/repos/CheBanca-iOS
+tabnext
+edit ~/repos/CheBanca-iOS/Feature/Operations/UI/WireTransfersHistory/WireTransfersHistoryViewController.swift
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 119 + 111) / 222)
+exe 'vert 2resize ' . ((&columns * 102 + 111) / 222)
+argglobal
+balt ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 29) / 58)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+wincmd w
+argglobal
+if bufexists("~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift") | buffer ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift | else | edit ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift | endif
+if &buftype ==# 'terminal'
+  silent file ~/repos/CheBanca-iOS/Feature/Operations/UI/HistoryPageView.swift
+endif
+balt ~/repos/CheBanca-iOS/Feature/Operations/UI/WireTransfersHistory/WireTransfersHistoryViewController.swift
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 50 - ((28 * winheight(0) + 29) / 58)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 50
+normal! 016|
+lcd ~/repos/CheBanca-iOS
+wincmd w
+exe 'vert 1resize ' . ((&columns * 119 + 111) / 222)
+exe 'vert 2resize ' . ((&columns * 102 + 111) / 222)
 tabnext
 edit ~/repos/CheBanca-iOS/Common/DesignSystem/UI/Views/SymbolAndLabelView.swift
 argglobal
@@ -371,13 +459,47 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 28) / 57)
+6
+normal! zo
+7
+normal! zo
+14
+normal! zo
+26
+normal! zo
+34
+normal! zo
+50
+normal! zo
+54
+normal! zo
+59
+normal! zo
+let s:l = 1 - ((0 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
+normal! 017|
+tabnext
+edit ~/repos/CheBanca-iOS/Common/DesignSystem/UI/Views/SymbolAndLabelView.swift
+argglobal
+balt ~/repos/CheBanca-iOS/Feature/CBill/UI/CBillPagoPa/CBillSearchResults/Cells/InfoDescriptionWithSymbolTableViewCell.swift
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 48 - ((47 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 48
 normal! 0
-tabnext 3
+tabnext 6
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
