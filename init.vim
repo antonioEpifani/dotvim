@@ -7,16 +7,26 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-dispatch'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'lilyball/vim-swift'
-Plug 'lifepillar/vim-mucomplete'
 Plug 'critiqjo/lldb.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 call plug#end()
 
 "we want syntax
 "
 syntax on
 colorscheme onehalfdark
+autocmd FileType swift setlocal omnifunc=lsp#complete
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
 
 "global settings
+:lua require('luastart')
 set number
 set tabstop=4
 set smartindent
@@ -29,6 +39,7 @@ set scroll=5
 set noinfercase
 set completeopt=longest,menuone,noinsert
 let mapleader=" "
+set helpfile=/Users/antonioepifani/.vim/doc/help.txt
 
 
 " plugins settings

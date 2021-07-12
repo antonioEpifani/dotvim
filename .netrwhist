@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/antonioepifani/dotvim/plugged/nvim-lspconfig'
 let g:netrw_dirhist_5='/Users/antonioepifani/repos/CheBanca-iOS/Feature/Operations/UI/WireTransfersHistory'
 let g:netrw_dirhist_4='/Users/antonioepifani/repos/CheBanca-iOS/Feature/Operations/UI'
 let g:netrw_dirhist_3='/Users/antonioepifani/repos/CheBanca-iOS/Feature/Operations/UI/WireTransfersHistory'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_0='/Users/antonioepifani/dotvim/syntax'
 let g:netrw_dirhist_9='/Users/antonioepifani/dotvim'
 let g:netrw_dirhist_8='/Users/antonioepifani'
 let g:netrw_dirhist_7='/Users/antonioepifani/dotvim'
-let g:netrw_dirhist_6='/Users/antonioepifani'
