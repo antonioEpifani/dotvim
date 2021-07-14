@@ -17,6 +17,7 @@ call plug#end()
 syntax on
 colorscheme onehalfdark
 autocmd FileType swift setlocal omnifunc=lsp#complete
+autocmd FileType swift set makeprg=../build.sh
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -45,10 +46,31 @@ set helpfile=/Users/antonioepifani/.vim/doc/help.txt
 " plugins settings
 "
 let g:mucomplete#enable_auto_at_startup = 1
-let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6 }}
-let g:mucomplete#chains = { 'default' : ['path', 'omni', 'keyn', 'dict', 'uspl'], 'vim' : ['path', 'cmd', 'keyn', 'keyp', 'defs', 'incl', 'c-n', 'c-p']}
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 }}
+let g:completion_chain_complete_list = {
+	\'default' : [
+	\    {'complete_items': ['lsp']},
+	\    {'complete_items': ['snippet']},
+	\    {'mode': '<c-p>'},
+	\    {'mode': '<c-n>'}
+	\]
+	\}
+let g:completion_auto_change_source = 1
 
+" fzf actions
+function! Ciao(lines)
+  open
+  echom "ecco gli argomenti"
+  echom a:lines
+endfunction
 
+command -nargs=1 Ciao :call Ciao(<q-args>)
+
+let g:fzf_action = {
+  \ 'ctrl-q': 'Ciao',
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 "fzf mappings
 nnoremap <leader>f :Files<cr>
