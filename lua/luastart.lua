@@ -37,7 +37,6 @@ end
 -- map buffer local keybindings when the language server attaches    
 local servers = { "pyright", "rust_analyzer", "tsserver", "sourcekit" }    
 for _, lsp in ipairs(servers) do    
-	print("boh non so se va")
   nvim_lsp[lsp].setup {    
 	on_attach = on_attach,    
 	flags = {    
