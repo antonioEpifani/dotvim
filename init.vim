@@ -10,6 +10,8 @@ Plug 'lilyball/vim-swift'
 Plug 'critiqjo/lldb.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'dbgx/lldb.nvim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "we want syntax
