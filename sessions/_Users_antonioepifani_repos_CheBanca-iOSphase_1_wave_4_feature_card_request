@@ -8,33 +8,43 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +20 Feature/CBill/UI/CBillPagoPa/CBillTabView/CBillTabViewController.swift
-badd +13 Feature/Investments/UI/InvestmentsTabViewController/InvestmentsTabViewController.swift
-badd +57 Feature/Investments/UI/Markets/MarketsViewController/MarketsViewController.swift
-badd +14 Feature/Cards/UI/CardRequestTabViewController/CardRequestTabViewController.swift
-badd +1 Feature/Investments/UI/InvestmentsTabViewController/InvestmentsTabPageView.swift
+badd +9 Feature/Cards/UI/CardRequestTabViewController/CardRequestTabViewController.swift
 badd +30 Feature/Cards/UI/CardRequestTabViewController/CardRequestTabPageView.swift
-badd +46 CheBanca/Logic/AppCoordinator/AppCoordinator.swift
-badd +1 2021-07-12\ 16
+badd +47 CheBanca/Logic/AppCoordinator/AppCoordinator.swift
 badd +7 Feature/Cards/UI/CardRequestTabViewController/AmexCardViewController/AmexCardPageView.swift
 badd +51 Feature/Cards/UI/CardRequestTabViewController/AmexCardViewController/AmexCardViewController.swift
-badd +1 Feature/BankAccounts/UI/ShowInformationTransactionViewController/ShowInformationTransactionPageView.swift
-badd +1 Feature/Operations/UI/TransactionsHistory/TransactionsHistoryPageView.swift
-badd +1 Feature/Operations/UI/TransactionsHistory/TransactionsHistoryViewController.swift
-badd +1 Feature/CBill/UI/CBillPagoPa/CBillTabView/CBillTabPageView.swift
-badd +1 2021-07-12\ 17
-badd +62 Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardPageView.swift
+badd +1 Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardPageView.swift
 badd +22 Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardViewController.swift
-badd +30 Feature/CBill/UI/CBillPagoPa/CBillPaymentData/CBillPaymentDataViewController.swift
-badd +9 Feature/CBill/UI/CBillPagoPa/CBillPaymentData/CBillPaymentDataPageView.swift
-badd +101 Feature/Cards/UI/CardRequestTabViewController/Cells/CardRequestProductTableViewCell.swift
-badd +1 Common/DesignSystem/UI/TableView/Cells/DoubleInfoDescriptionTableViewCell.swift
-badd +93 Feature/Cards/UI/CardRequestTabViewController/Views/CardProductDescriptionView.swift
-badd +1 Common/DesignSystem/UI/Views/InfoDescriptionView.swift
-badd +2 Common/DesignSystem/UI/Views/MenuItemWithFlagView.swift
-badd +32 Common/DesignSystem/UI/Views/InfoAmountView.swift
-badd +56 Common/DesignSystem/UI/TableView/Cells/InfoAmountTableViewCell.swift
-badd +0 2021-07-13\ 12
+badd +97 Feature/Cards/UI/CardRequestTabViewController/Cells/CardRequestProductTableViewCell.swift
+badd +71 Feature/Cards/UI/CardRequestTabViewController/Views/CardProductDescriptionView.swift
+badd +1 Feature/Cards/UI/CardRequestTabViewController/Views
+badd +542 Feature/BankAccounts/UI/BankAccountsViewController/BankAccountsViewController.swift
+badd +55 Feature/Cards/Logic/CardRequest.swift
+badd +153 Feature/Cards/UI/CardsViewController/CardsPageView.swift
+badd +4 Common/DesignSystem/UI/TableView/Cells/MenuItemWithDescriptionTableViewCell.swift
+badd +1 Feature/Operations/UI/MenuPage/MenuPageView.swift
+badd +1 Feature/Operations/UI/MenuPage
+badd +145 Feature/Operations/UI/MenuPage/MenuViewController.swift
+badd +157 Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailPageView.swift
+badd +83 Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailViewController.swift
+badd +1 Feature/BankAccounts/UI/BankAccountsViewController/BankAccountsPageView.swift
+badd +24 Feature/Cards/UI/CardsViewController/Views/CheBancaCardView.swift
+badd +1 Feature/Cards/Logic/CardRequestModel.swift
+badd +1 Common/DesignSystem/UI/TableView/Cells/OnlyTextTableViewCell.swift
+badd +4 Common/DesignSystem/UI/TableView/Cells/MenuTableViewCell.swift
+badd +1 Common/DesignSystem/UI/TableView/Cells/ImageTableViewCell.swift
+badd +1 ~/Library/Developer/Xcode/DerivedData/CheBanca-esfpjeizudfhruaowibayihwotmo/Build/Products/SYS\ (Debug)-iphonesimulator/UserProfile.framework/Headers/UserProfile-Swift.h
+badd +68284 tags
+badd +5 Feature/UserProfile/UI/Messages/Cells/MessageImageInformationTableViewCell.swift
+badd +18 Common/DesignSystem/UI/TableView/Cells/ImageTextTableViewCell.swift
+badd +1 Feature/UserProfile/UI/Messages/Detail/MessageInformationPageView.swift
+badd +1 ShowCaseApp/AppCoordinatorShowCase.swift
+badd +204 Feature/BankTransfer/UI/RecurringTransferListViewController/RecurringTransferListViewController.swift
+badd +110 Feature/HomePage/UI/CRMCampaignViewController/CRMCampaignPageView.swift
+badd +103 Feature/UserProfile/UI/Contacts/ContactsViewController/ContactsPageView.swift
+badd +29 Feature/Investments/UI/Markets/NewsBottomViewController/NewsBottomPageView.swift
+badd +59 Common/DesignSystem/UI/Views/MenuItemView.swift
+badd +45 Common/DesignSystem/UI/Views/SelectableWithImageView.swift
 argglobal
 %argdel
 set stal=2
@@ -42,6 +52,25 @@ tabnew
 tabnew
 tabrewind
 edit Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardPageView.swift
+argglobal
+balt Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardViewController.swift
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=999
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 40 - ((39 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 40
+normal! 0
+lcd ~/repos/CheBanca-iOS
+tabnext
+edit ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailPageView.swift
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -62,12 +91,13 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 45 + 29) / 59)
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe '2resize ' . ((&lines * 45 + 29) / 59)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-exe '3resize ' . ((&lines * 10 + 29) / 59)
+exe '1resize ' . ((&lines * 42 + 28) / 56)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
+exe '2resize ' . ((&lines * 42 + 28) / 56)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe '3resize ' . ((&lines * 10 + 28) / 56)
 argglobal
+balt ~/repos/CheBanca-iOS/Common/DesignSystem/UI/TableView/Cells/MenuTableViewCell.swift
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -76,20 +106,19 @@ setlocal fdl=999
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 22) / 45)
+let s:l = 153 - ((20 * winheight(0) + 21) / 42)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 016|
+keepjumps 153
+normal! 0
 lcd ~/repos/CheBanca-iOS
 wincmd w
 argglobal
-if bufexists("~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardViewController.swift") | buffer ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardViewController.swift | else | edit ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardViewController.swift | endif
+if bufexists("~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailViewController.swift") | buffer ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailViewController.swift | else | edit ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailViewController.swift | endif
 if &buftype ==# 'terminal'
-  silent file ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardViewController.swift
+  silent file ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailViewController.swift
 endif
-balt ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardPageView.swift
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -98,17 +127,17 @@ setlocal fdl=999
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 22 - ((0 * winheight(0) + 22) / 45)
+let s:l = 63 - ((0 * winheight(0) + 21) / 42)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 22
-normal! 050|
+keepjumps 63
+normal! 081|
 lcd ~/repos/CheBanca-iOS
 wincmd w
 argglobal
 enew
-balt ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CheBancaCardViewController/CheBancaCardPageView.swift
+balt ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/CardDetailViewController/CardRequestDetailPageView.swift
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -119,39 +148,15 @@ setlocal fdn=20
 setlocal fen
 lcd ~/repos/CheBanca-iOS
 wincmd w
-exe '1resize ' . ((&lines * 45 + 29) / 59)
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe '2resize ' . ((&lines * 45 + 29) / 59)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-exe '3resize ' . ((&lines * 10 + 29) / 59)
-tabnext
-edit ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Views/CardProductDescriptionView.swift
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+exe '1resize ' . ((&lines * 42 + 28) / 56)
 exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe '2resize ' . ((&lines * 27 + 29) / 59)
+exe '2resize ' . ((&lines * 42 + 28) / 56)
 exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-exe '3resize ' . ((&lines * 28 + 29) / 59)
-exe 'vert 3resize ' . ((&columns * 106 + 106) / 212)
+exe '3resize ' . ((&lines * 10 + 28) / 56)
+tabnext
+edit ~/repos/CheBanca-iOS/Common/DesignSystem/UI/TableView/Cells/MenuItemWithDescriptionTableViewCell.swift
 argglobal
+balt ~/repos/CheBanca-iOS/CheBanca/Logic/AppCoordinator/AppCoordinator.swift
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -160,128 +165,13 @@ setlocal fdl=999
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 47 - ((24 * winheight(0) + 28) / 56)
+let s:l = 42 - ((41 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 47
-normal! 019|
-lcd ~/repos/CheBanca-iOS
-wincmd w
-argglobal
-if bufexists("~/repos/CheBanca-iOS/Common/DesignSystem/UI/TableView/Cells/InfoAmountTableViewCell.swift") | buffer ~/repos/CheBanca-iOS/Common/DesignSystem/UI/TableView/Cells/InfoAmountTableViewCell.swift | else | edit ~/repos/CheBanca-iOS/Common/DesignSystem/UI/TableView/Cells/InfoAmountTableViewCell.swift | endif
-if &buftype ==# 'terminal'
-  silent file ~/repos/CheBanca-iOS/Common/DesignSystem/UI/TableView/Cells/InfoAmountTableViewCell.swift
-endif
-balt ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Views/CardProductDescriptionView.swift
-setlocal fdm=syntax
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=999
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 57 - ((14 * winheight(0) + 13) / 27)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 57
+keepjumps 42
 normal! 0
 lcd ~/repos/CheBanca-iOS
-wincmd w
-argglobal
-if bufexists("~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Cells/CardRequestProductTableViewCell.swift") | buffer ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Cells/CardRequestProductTableViewCell.swift | else | edit ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Cells/CardRequestProductTableViewCell.swift | endif
-if &buftype ==# 'terminal'
-  silent file ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Cells/CardRequestProductTableViewCell.swift
-endif
-balt ~/repos/CheBanca-iOS/Common/DesignSystem/UI/Views/MenuItemWithFlagView.swift
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=5
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-7
-normal! zo
-51
-normal! zo
-57
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-let s:l = 44 - ((15 * winheight(0) + 14) / 28)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 44
-normal! 048|
-lcd ~/repos/CheBanca-iOS
-wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe '2resize ' . ((&lines * 27 + 29) / 59)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-exe '3resize ' . ((&lines * 28 + 29) / 59)
-exe 'vert 3resize ' . ((&columns * 106 + 106) / 212)
-tabnext
-edit ~/repos/CheBanca-iOS/2021-07-13\ 12
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe '1resize ' . ((&lines * 45 + 29) / 59)
-exe '2resize ' . ((&lines * 10 + 29) / 59)
-argglobal
-balt ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Views/CardProductDescriptionView.swift
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 22) / 45)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-lcd ~/repos/CheBanca-iOS
-wincmd w
-argglobal
-enew
-balt ~/repos/CheBanca-iOS/Feature/Cards/UI/CardRequestTabViewController/Views/CardProductDescriptionView.swift
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-lcd ~/repos/CheBanca-iOS
-wincmd w
-exe '1resize ' . ((&lines * 45 + 29) / 59)
-exe '2resize ' . ((&lines * 10 + 29) / 59)
 tabnext 2
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -289,8 +179,6 @@ if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToOF
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
